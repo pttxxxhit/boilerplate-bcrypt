@@ -1,19 +1,15 @@
-
-const bcrypt = require('bcrypt');
-
 'use strict';
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const fccTesting  = require('./freeCodeCamp/fcctesting.js');
+const bcrypt      = require('bcrypt'); // ← solo una vez aquí
 const app         = express();
-const bcrypt = require('bcrypt');
-
 
 fccTesting(app);
+
 const saltRounds = 12;
 const myPlaintextPassword = 'sUperpassw0rd!';
 const someOtherPlaintextPassword = 'pass123';
-
 
 //START_ASYNC -do not remove notes, place code between correct pair of notes.
 
@@ -26,34 +22,6 @@ const someOtherPlaintextPassword = 'pass123';
 
 
 //END_SYNC
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
