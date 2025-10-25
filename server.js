@@ -1,3 +1,6 @@
+
+const bcrypt = require('bcrypt');
+
 'use strict';
 const express     = require('express');
 const bodyParser  = require('body-parser');
