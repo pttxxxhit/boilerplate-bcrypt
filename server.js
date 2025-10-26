@@ -18,7 +18,30 @@ const someOtherPlaintextPassword = 'pass123';
 //END_ASYNC
 
 //START_SYNC
+const bcrypt = require('bcrypt');
 
+const password = 'miContraseñaSegura';
+const saltRounds = 12;
+
+bcrypt.hash(password, saltRounds, function(err, hash) {
+  if (err) {
+    console.error('Error al crear el hash:', err);
+  } else {
+    console.log('Hash generado:', hash);
+
+    const hashGuardado = hash; // usamos el mismo hash para comparar
+
+    bcrypt.compare(password, hashGuardado, function(err, result) {
+      if (err) {
+        console.error('Error al comparar:', err);
+      } else if (result) {
+        console.log('¡La contraseña es correcta!');
+      } else {
+        console.log('La contraseña es incorrecta.');
+      }
+    });
+  }
+});.
 
 
 //END_SYNC
