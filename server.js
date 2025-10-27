@@ -20,11 +20,18 @@ const someOtherPlaintextPassword = 'pass123';
 //END_ASYNC
 
 //START_SYNC
-bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
+bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
   if (err) {
     console.error(err);
   } else {
     console.log(hash);
+    bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(res);
+      }
+    });
   }
 });
 
