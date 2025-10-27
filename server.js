@@ -35,7 +35,6 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
   }
 });
 
-
 //END_SYNC
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
