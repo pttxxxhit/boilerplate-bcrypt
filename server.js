@@ -1,9 +1,11 @@
 'use strict';
 const express     = require('express');
 const bodyParser  = require('body-parser');
+const cors        = require('cors');
 const fccTesting  = require('./freeCodeCamp/fcctesting.js');
 const bcrypt      = require('bcrypt'); // ← solo una vez aquí
 const app         = express();
+app.use(cors());
 
 fccTesting(app);
 
